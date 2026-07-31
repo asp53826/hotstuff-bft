@@ -1,0 +1,23 @@
+Byzantine threshold study
+adversary: everything;  100 seeds per cell
+Safety must hold at and below f, and must break above it. A table that is
+clean everywhere means the adversary is too weak to have tested anything.
+
+n = 4, so f = 1 tolerated (n = 3f+1 gives f = 1)
+  byzantine   safe  VIOLATED  conflicting QCs  no prog  budget  equivocated   blocks
+  ----------------------------------------------------------------------------------
+          0     98         0       0 runs / 0        2       0          100     25.6
+          1     99         0       0 runs / 0        1       0          100     20.4
+          2     19         0    98 runs / 562       81       0          100      1.6   <- exceeds f
+          3      0         0 100 runs / 247938        0     100          100      0.0   <- exceeds f
+
+n = 7, so f = 2 tolerated (n = 3f+1 gives f = 2)
+  byzantine   safe  VIOLATED  conflicting QCs  no prog  budget  equivocated   blocks
+  ----------------------------------------------------------------------------------
+          0     99         0       0 runs / 0        1       0          100     18.1
+          1     95         0       0 runs / 0        5       0          100     16.1
+          2     98         0       0 runs / 0        2       0          100     15.3
+          3     73         0    77 runs / 189       27       0          100     10.1   <- exceeds f
+          4     26         0    96 runs / 725       74       0          100      2.6   <- exceeds f
+
+wrote results/threshold.json

@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hotstuff-bft"
+version = "0.1.0"
+description = "Chained HotStuff under an adversarial scheduler, with a threshold study that proves the adversary is strong enough"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = ["dst-harness @ git+https://github.com/asp53826/dst-harness@main"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools]
+packages = ["hs"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: studies that need a couple of hundred seeds"]

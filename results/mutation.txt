@@ -1,0 +1,19 @@
+n = 7, f = 2 Byzantine replicas running 'everything'
+budget 400 seeds per mutant
+
+mutant                         seed    secs  outcome
+------------------------------------------------------------------------
+(control: unmutated)              -    23.4  clean over 400 seeds
+no_safety_rule                   21     1.2  SAFETY: height 1 committed as dfaa84dafcc0 by r1 and 7a1d8d94578
+no_lock_rule                     21     1.2  SAFETY: height 1 committed as dfaa84dafcc0 by r1 and 7a1d8d94578
+weak_quorum                       1     0.1  CERTIFICATE: r2 committed block at height 2 whose justifying QC 
+skip_qc_check                     1     0.0  CERTIFICATE: r2 committed block at height 6 whose justifying QC 
+vote_twice_per_view               -    33.6  NOT CAUGHT in 400 seeds
+allow_gaps_in_chain               -    23.5  NOT CAUGHT in 400 seeds
+trust_forwarded_proposals         -    23.2  NOT CAUGHT in 400 seeds
+unpersisted_vote                  -    23.6  NOT CAUGHT in 400 seeds
+genesis_any_view                182    10.7  SAFETY: height 1 committed as dfaa84dafcc0 by r0 and 656a66bd9dd
+no_liveness_rule                  -    23.2  as expected: safety-preserving
+
+caught 5/9 safety-breaking mutants; 0 false positives
+wrote results/mutation.json

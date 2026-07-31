@@ -1,0 +1,57 @@
+[
+  {
+    "mutant": "no_safety_rule",
+    "seed": 21,
+    "detail": "SAFETY: height 1 committed as dfaa84dafcc0 by r1 and 7a1d8d945786 by r2",
+    "expected_clean": false
+  },
+  {
+    "mutant": "no_lock_rule",
+    "seed": 21,
+    "detail": "SAFETY: height 1 committed as dfaa84dafcc0 by r1 and 7a1d8d945786 by r2",
+    "expected_clean": false
+  },
+  {
+    "mutant": "weak_quorum",
+    "seed": 1,
+    "detail": "CERTIFICATE: r2 committed block at height 2 whose justifying QC has 4 valid signatures, quorum is 5",
+    "expected_clean": false
+  },
+  {
+    "mutant": "skip_qc_check",
+    "seed": 1,
+    "detail": "CERTIFICATE: r2 committed block at height 6 whose justifying QC has 5 valid signatures, quorum is 5",
+    "expected_clean": false
+  },
+  {
+    "mutant": "vote_twice_per_view",
+    "seed": null,
+    "expected_clean": false
+  },
+  {
+    "mutant": "allow_gaps_in_chain",
+    "seed": null,
+    "expected_clean": false
+  },
+  {
+    "mutant": "trust_forwarded_proposals",
+    "seed": null,
+    "expected_clean": false
+  },
+  {
+    "mutant": "unpersisted_vote",
+    "seed": null,
+    "expected_clean": false
+  },
+  {
+    "mutant": "genesis_any_view",
+    "seed": 182,
+    "detail": "SAFETY: height 1 committed as dfaa84dafcc0 by r0 and 656a66bd9dd3 by r4",
+    "expected_clean": false
+  },
+  {
+    "mutant": "no_liveness_rule",
+    "seed": null,
+    "expected_clean": true
+  }
+]
